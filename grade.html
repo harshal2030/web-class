@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Grade Calculator</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <input type="number" id="marks" placeholder="Enter your marks" />
+    </form>
+
+    <script>
+      const form = document.getElementById('form');
+      const marks = document.getElementById('marks');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let grade = 'A+';
+
+        const marksInNumber = parseInt(marks.value);
+
+        if (marksInNumber > 90) {
+          grade = 'A+';
+        } else if (marksInNumber > 80) {
+          grade = 'A';
+        } else if (marksInNumber > 70) {
+          grade = 'B+';
+        } else if (marksInNumber > 60) {
+          grade = 'B';
+        } else if (marksInNumber > 50) {
+          grade = 'C+';
+        } else if (marksInNumber > 40) {
+          grade = 'C';
+        } else {
+          grade = 'D';
+        }
+
+        alert(`You got an ${grade} grade`);
+      });
+    </script>
+  </body>
+</html>

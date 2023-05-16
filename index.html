@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Web d</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <input
+        type="password"
+        id="name"
+        placeholder="Enter your name"
+      />
+    </form>
+
+    <script>
+      const form = document.getElementById('form');
+      const name = document.getElementById('name');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        alert(`Hello, ${name.value}`);
+      });
+    </script>
+  </body>
+</html>

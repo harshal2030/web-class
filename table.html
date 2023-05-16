@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Tables</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <input type="number" id="num" placeholder="Enter number" />
+    </form>
+
+    <script>
+      const form = document.getElementById('form');
+      const num = document.getElementById('num');
+
+
+      function generateHTML (factor) {
+      const number = parseInt(num.value);
+
+        const result = number * factor;
+        const para = document.createElement('p');
+
+        para.innerHTML = `${num.value} x ${factor} = ${result}`;
+
+        return para;
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const container = document.createElement('div');
+
+        for (i = 1; i <= 10; i++) {
+          const code = generateHTML(i);
+
+          container.appendChild(code);
+        }
+
+        document.querySelector('body').appendChild(container);
+      });
+    </script>
+  </body>
+</html>
